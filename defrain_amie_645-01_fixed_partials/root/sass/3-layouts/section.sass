@@ -1,0 +1,61 @@
+p 
+    font-family: $bodyFont
+
+@mixin paragraphs
+    font: 1em $bodyFont
+    color: $bodyFontColor
+    line-height: $lineHeight
+main p
+    @include paragraphs
+aside p
+    @include paragraphs
+
+
+p#figcaption
+    font: italic $smallSpace $bodyFont
+    color: #666
+    text-align: center
+    background-color: $asideFontColor
+    @media #{$forTablet} 
+        float: right
+        padding: 0 $smallSpace 1em 2em
+        margin-left: 6em
+
+@mixin h 
+    font-family: $headFont
+
+h1
+    @include h
+    font-size: $h1Size
+h2
+    @include h
+    font-size: $h2Size
+    color: $darkGreen
+
+.extraSpace 
+    margin: $horPadding
+
+main
+    background-color: $asideFontColor
+    @media #{$forTablet} 
+        float: left
+        width: 60%
+        padding-bottom: 99999px
+        margin-bottom: -99999px
+
+main section
+    padding: 0 $horPadding $horPadding $horPadding
+    background-color: $asideFontColor
+
+main section h1
+    @media #{$forTablet} 
+        margin-top: 0
+        padding: $smallSpace $horPadding 0 20px
+
+main section h2
+    @media #{$forTablet} 
+        padding: 0 $horPadding 0 18px
+
+main section p
+    @media #{$forTablet} 
+        padding: 0 $horPadding 0 $smallSpace

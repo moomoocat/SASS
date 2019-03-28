@@ -1,0 +1,272 @@
+////VARIABLES in variables.sass
+
+$bodyFont: 'Lato', sans-serif
+$bodyFontSize: 10px
+$headFont: 'Freckle Face', cursive
+$h1Size: 2.5em
+$h2Size: 1.5em
+$mainH1Size: 3.5em
+$lineHeight: 1.5
+$horPadding: 1.5em
+$verPadding: 0
+$lightGreenBG: #7bb8a5
+$brownGreenBG: #42413c
+$activeButton: #9ed3c2
+$darkGreen: #3b8686
+$bodyFontColor: #333
+$asideFontColor: #fff
+$smallSpace: 1em
+$forTablet: '(min-width: 900px)'
+
+//BASE SASS STYLES in base.sass
+
+/* CHANGE INLINE ELEMENTS TO BLOCK --------- */
+
+header, nav, main, article, aside, section, footer, video, audio, figure
+	display: block
+
+///* ZERO-OUT MARGINS/PADDING ---------------- */
+*
+	margin: 0
+	padding: 0
+
+/* BACKGROUND COLOR FOR SITE --------------- */
+body
+	background-color: $asideFontColor
+	@media #{$forTablet}
+		background-color: $brownGreenBG
+
+///* REPONSIVE CODING ------------------------ */
+#wrapper
+	margin: 0 auto
+	@media #{$forTablet}
+		width: 90%
+		margin: auto
+		overflow: hidden
+
+img
+	width: 100%
+	height: auto
+	padding: 0
+	@media #{$forTablet} 
+		float: left
+
+
+/* HEADER STYLES in header.sass file */
+
+a#logo
+	font-family: $bodyFont
+	font-size: 100%
+	margin: 5px
+	line-height: 84px
+	color: $bodyFontColor
+	text-decoration: none
+	font-style: italic
+
+nav 
+	background-color: $lightGreenBG
+//	position: relative
+
+#logo img
+	width: 60px
+	float: left
+	margin: $horPadding 0 0 $horPadding
+
+header h1
+	margin: 0
+	padding: 0
+
+//NESTING
+header#mainHead
+	font-family: $headFont
+	@extend nav
+	h1
+		font-size: $mainH1Size
+		border-top: solid 1px $bodyFontColor
+		text-align: center
+
+.menu-content
+	@media #{$forTablet}
+		background-color: $lightGreenBG
+	&ul li
+		border-bottom: none
+		padding: 0.25em 1em 0.5em 1em
+	&li
+		float: left
+		padding: 0 $smallSpace 1em 0
+
+//NESTING
+.menu-content
+	ul li
+		font: 1.2em $bodyFont
+		color: $bodyFontColor
+		padding: .25em 0 .5em $smallSpace
+		background-color: $darkGreen
+		border-bottom: solid 1px $asideFontColor
+		@media #{$forTablet}
+			background-color: $lightGreenBG
+			border-bottom: none
+			padding: 0.25em 1em 0.5em 1em
+	li
+		@media #{$forTablet} 
+			float: left
+			padding: 0 $smallSpace 1em 0
+			background-color: $lightGreenBG
+	ul
+		padding-left: 0
+		@media #{$forTablet} 
+			float: right
+			margin-top: -3.8em
+
+//NESTING
+.collapsible-menu 
+	ul
+		list-style-type: none
+	a
+		display: block
+		text-decoration: none
+	label 
+		font: 1.5em $bodyFont
+		display: block
+		cursor: pointer
+		background: url(../images/nav-icon.png) no-repeat left center
+		padding: 1em 0 1em 5em
+		position: absolute
+		right: -2.5em
+		top: .75em
+		@media #{$forTablet} 
+			display: none
+
+//NESTING
+.menu-content
+	max-height: 0
+	overflow: hidden
+	@media #{$forTablet}
+		height: auto
+		overflow: visible
+	ul li:hover
+		color: $asideFontColor
+	ul li.active 
+		background-color: $activeButton
+		@media #{$forTablet}
+			background-color: $activeButton
+
+input#menu
+	display: none
+
+input:checked ~ .menu-content
+	max-height: 100%
+
+//END OF header.sass file
+
+
+/* SECTION STYLES in section.sass  */
+p 
+	font-family: $bodyFont
+
+@mixin paragraphs
+	font: 1em $bodyFont
+	color: $bodyFontColor
+	line-height: $lineHeight
+main p
+	@include paragraphs
+aside p
+	@include paragraphs
+
+
+p#figcaption
+	font: italic $smallSpace $bodyFont
+	color: #666
+	text-align: center
+	background-color: $asideFontColor
+	@media #{$forTablet} 
+		float: right
+		padding: 0 $smallSpace 1em 2em
+		margin-left: 6em
+//
+//h1, h2
+//	font-family: $headFont
+//	margin-top: .5em
+
+@mixin h 
+	font-family: $headFont
+//	margin-top: .5em
+h1
+	@include h
+	font-size: $h1Size
+h2
+	@include h
+	font-size: $h2Size
+	color: $darkGreen
+
+.extraSpace 
+	margin: $horPadding
+
+main
+	background-color: $asideFontColor
+	@media #{$forTablet} 
+		float: left
+		width: 60%
+		padding-bottom: 99999px
+		margin-bottom: -99999px
+
+main section
+	padding: 0 $horPadding $horPadding $horPadding
+	background-color: $asideFontColor
+
+main section h1
+		@media #{$forTablet} 
+			margin-top: 0
+			padding: $smallSpace $horPadding 0 20px
+
+main section h2
+		@media #{$forTablet} 
+			padding: 0 $horPadding 0 18px
+
+main section p
+		@media #{$forTablet} 
+			padding: 0 $horPadding 0 $smallSpace
+
+//END OF section.sass
+
+/* ASIDE STYLES in aside.sass */
+
+aside
+	background-color: $darkGreen
+	padding-bottom: $horPadding
+	@media #{$forTablet}
+		float: left
+		width: 40%
+		background-image: url(../image/1px_deep_aside_background_color.png)
+		padding-bottom: 99999px
+		margin-bottom: -99999px
+
+aside h1
+	font-size: $h2Size
+	color: $asideFontColor
+	padding: .5em 0 0 1em
+	border-bottom: solid 1px $asideFontColor
+
+aside h2
+	font-size: 1.5em
+	color: $asideFontColor
+	padding-left: $smallSpace
+	
+aside p
+	color: $asideFontColor
+	padding-right: $horPadding
+	padding-left: $horPadding
+
+
+/*  FOOTER STYLES in footer.sass  */
+
+footer
+	font: 100% $bodyFont
+	background-color: $lightGreenBG
+	text-align: center
+	padding: $smallSpace 0
+	@media #{$forTablet}
+		clear: both
+//		position: fixed
+//		width: 100%
+//		bottom: 0

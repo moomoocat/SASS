@@ -1,0 +1,25 @@
+header, nav, main, article, aside, section, footer, video, audio, figure
+    display: block
+
+*
+    margin: 0
+    padding: 0
+
+body
+    background-color: $asideFontColor
+    @media #{$forTablet}
+    background-color: $brownGreenBG
+
+#wrapper
+    margin: 0 auto
+    @media #{$forTablet}
+        width: 90%
+        margin: auto
+        overflow: hidden
+
+img
+    width: 100%
+    height: auto
+    padding: 0
+    @media #{$forTablet} 
+        float: left

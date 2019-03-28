@@ -1,0 +1,97 @@
+a#logo
+    font-family: $bodyFont
+    font-size: 100%
+    margin: 5px
+    line-height: 84px
+    color: $bodyFontColor
+    text-decoration: none
+    font-style: italic
+
+nav 
+    background-color: $lightGreenBG
+    
+#logo img
+    width: 60px
+    float: left
+    margin: $horPadding 0 0 $horPadding
+
+header h1
+    margin: 0
+    padding: 0
+
+header#mainHead
+    font-family: $headFont
+    @extend nav
+    h1
+        font-size: $mainH1Size
+        border-top: solid 1px $bodyFontColor
+        text-align: center 
+
+.menu-content
+    @media #{$forTablet}
+        background-color: $lightGreenBG
+    &ul li
+        border-bottom: none
+        padding: 0.25em 1em 0.5em 1em
+    &li
+        float: left
+        padding: 0 $smallSpace 1em 0
+        
+.menu-content
+    ul li
+        font: 1.2em $bodyFont
+        color: $bodyFontColor
+        padding: .25em 0 .5em $smallSpace
+        background-color: $darkGreen
+        border-bottom: solid 1px $asideFontColor
+        @media #{$forTablet}
+            background-color: $lightGreenBG
+            border-bottom: none
+            padding: 0.25em 1em 0.5em 1em
+    li
+        @media #{$forTablet} 
+            float: left
+            padding: 0 $smallSpace 1em 0
+            background-color: $lightGreenBG
+    ul
+            padding-left: 0
+            @media #{$forTablet} 
+                float: right
+                margin-top: -3.8em
+
+.collapsible-menu 
+    ul
+        list-style-type: none
+    a
+        display: block
+        text-decoration: none
+    label 
+        font: 1.5em $bodyFont
+        display: block
+        cursor: pointer
+        background: url(../images/nav-icon.png) no-repeat left center
+        padding: 1em 0 1em 5em
+        position: absolute
+        right: -2.5em
+        top: .75em
+        @media #{$forTablet} 
+            display: none    
+
+.menu-content
+    max-height: 0
+    overflow: hidden
+    @media #{$forTablet}
+        height: auto
+        overflow: visible
+    ul li:hover
+        color: $asideFontColor
+    ul li.active 
+        background-color: $activeButton
+        @media #{$forTablet}
+            background-color: $activeButton
+
+input#menu
+    display: none
+
+input:checked ~ .menu-content
+    max-height: 100%

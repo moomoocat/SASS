@@ -1,0 +1,224 @@
+header, nav, header#mainHead, main, article, aside, section, footer, video, audio, figure {
+  display: block; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #fff;
+  background-color: #42413c; }
+
+#wrapper {
+  margin: 0 auto; }
+  @media (min-width: 900px) {
+    #wrapper {
+      width: 90%;
+      margin: auto;
+      overflow: hidden; } }
+
+img {
+  width: 100%;
+  height: auto;
+  padding: 0; }
+  @media (min-width: 900px) {
+    img {
+      float: left; } }
+
+a#logo {
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
+  margin: 5px;
+  line-height: 84px;
+  color: #333;
+  text-decoration: none;
+  font-style: italic; }
+
+nav, header#mainHead {
+  background-color: #7bb8a5; }
+
+#logo img {
+  width: 60px;
+  float: left;
+  margin: 1.5em 0 0 1.5em; }
+
+header h1 {
+  margin: 0;
+  padding: 0; }
+
+header#mainHead {
+  font-family: "Freckle Face", cursive; }
+  header#mainHead h1 {
+    font-size: 3.5em;
+    border-top: solid 1px #333;
+    text-align: center; }
+
+@media (min-width: 900px) {
+  .menu-content {
+    background-color: #7bb8a5; } }
+.menu-contentul li {
+  border-bottom: none;
+  padding: 0.25em 1em 0.5em 1em; }
+.menu-contentli {
+  float: left;
+  padding: 0 1em 1em 0; }
+
+.menu-content ul li {
+  font: 1.2em "Lato", sans-serif;
+  color: #333;
+  padding: 0.25em 0 0.5em 1em;
+  background-color: #3b8686;
+  border-bottom: solid 1px #fff; }
+  @media (min-width: 900px) {
+    .menu-content ul li {
+      background-color: #7bb8a5;
+      border-bottom: none;
+      padding: 0.25em 1em 0.5em 1em; } }
+@media (min-width: 900px) {
+  .menu-content li {
+    float: left;
+    padding: 0 1em 1em 0;
+    background-color: #7bb8a5; } }
+.menu-content ul {
+  padding-left: 0; }
+  @media (min-width: 900px) {
+    .menu-content ul {
+      float: right;
+      margin-top: -3.8em; } }
+
+.collapsible-menu ul {
+  list-style-type: none; }
+.collapsible-menu a {
+  display: block;
+  text-decoration: none; }
+.collapsible-menu label {
+  font: 1.5em "Lato", sans-serif;
+  display: block;
+  cursor: pointer;
+  background: url(../images/nav-icon.png) no-repeat left center;
+  padding: 1em 0 1em 5em;
+  position: absolute;
+  right: -2.5em;
+  top: 0.75em; }
+  @media (min-width: 900px) {
+    .collapsible-menu label {
+      display: none; } }
+
+.menu-content {
+  max-height: 0;
+  overflow: hidden; }
+  @media (min-width: 900px) {
+    .menu-content {
+      height: auto;
+      overflow: visible; } }
+  .menu-content ul li:hover {
+    color: #fff; }
+  .menu-content ul li.active {
+    background-color: #9ed3c2; }
+    @media (min-width: 900px) {
+      .menu-content ul li.active {
+        background-color: #9ed3c2; } }
+
+input#menu {
+  display: none; }
+
+input:checked ~ .menu-content {
+  max-height: 100%; }
+
+p {
+  font-family: "Lato", sans-serif; }
+
+main p {
+  font: 1em "Lato", sans-serif;
+  color: #333;
+  line-height: 1.5; }
+
+aside p {
+  font: 1em "Lato", sans-serif;
+  color: #333;
+  line-height: 1.5; }
+
+p#figcaption {
+  font: italic 1em "Lato", sans-serif;
+  color: #666;
+  text-align: center;
+  background-color: #fff; }
+  @media (min-width: 900px) {
+    p#figcaption {
+      float: right;
+      padding: 0 1em 1em 2em;
+      margin-left: 6em; } }
+
+h1 {
+  font-family: "Freckle Face", cursive;
+  font-size: 2.5em; }
+
+h2 {
+  font-family: "Freckle Face", cursive;
+  font-size: 1.5em;
+  color: #3b8686; }
+
+.extraSpace {
+  margin: 1.5em; }
+
+main {
+  background-color: #fff; }
+  @media (min-width: 900px) {
+    main {
+      float: left;
+      width: 60%;
+      padding-bottom: 99999px;
+      margin-bottom: -99999px; } }
+
+main section {
+  padding: 0 1.5em 1.5em 1.5em;
+  background-color: #fff; }
+
+@media (min-width: 900px) {
+  main section h1 {
+    margin-top: 0;
+    padding: 1em 1.5em 0 20px; } }
+
+@media (min-width: 900px) {
+  main section h2 {
+    padding: 0 1.5em 0 18px; } }
+
+@media (min-width: 900px) {
+  main section p {
+    padding: 0 1.5em 0 1em; } }
+
+aside {
+  background-color: #3b8686;
+  padding-bottom: 1.5em; }
+  @media (min-width: 900px) {
+    aside {
+      float: left;
+      width: 40%;
+      background-image: url(../image/1px_deep_aside_background_color.png);
+      padding-bottom: 99999px;
+      margin-bottom: -99999px; } }
+
+aside h1 {
+  font-size: 1.5em;
+  color: #fff;
+  padding: 0.5em 0 0 1em;
+  border-bottom: solid 1px #fff; }
+
+aside h2 {
+  font-size: 1.5em;
+  color: #fff;
+  padding-left: 1em; }
+
+aside p {
+  color: #fff;
+  padding-right: 1.5em;
+  padding-left: 1.5em; }
+
+footer {
+  font: 100% "Lato", sans-serif;
+  background-color: #7bb8a5;
+  text-align: center;
+  padding: 1em 0;
+  clear: both; }
+
+/*# sourceMappingURL=main.css.map */
